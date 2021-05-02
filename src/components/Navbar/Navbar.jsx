@@ -33,7 +33,7 @@ export default function Nav() {
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
                         <div className={styles.NavCsi}>
-                        <img src={image}className={styles.navImage}/>
+                            <img src={image} className={styles.navImage} alt="elon bhaiya" />
                             <h5 className={styles.navText}>Elon Musk Cheems</h5>
                         </div>
                     </Typography>
