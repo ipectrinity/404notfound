@@ -4,6 +4,7 @@ import "./styles/app.scss";
 import Preloader from "./components/Preloder/Preloader.jsx";
 
 import Nav from "./components/Navbar/Navbar.jsx";
+import Board from "./components/board/Board.jsx";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -23,6 +24,9 @@ function App() {
         <div>
           <div className="navigation">
             <Nav />
+          </div>
+          <div className="pusher">
+            <Board />
           </div>
         </div>
       )}
