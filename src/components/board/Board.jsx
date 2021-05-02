@@ -20,6 +20,7 @@ const useStyles = makeStyles({
     root: {
         maxWidth: 700,
         minWidth: 700,
+
         backgroundColor: "#1a1a1b",
     },
 });
