@@ -1,0 +1,79 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -64.5px;
+  margin-top: -85.5px;
+}
+
+.ghost {
+  -webkit-animation: float 3s ease-out infinite;
+          animation: float 3s ease-out infinite;
+}
+
+@-webkit-keyframes float {
+  50% {
+    -webkit-transform: translate(0, 20px);
+            transform: translate(0, 20px);
+  }
+}
+
+@keyframes float {
+  50% {
+    -webkit-transform: translate(0, 20px);
+            transform: translate(0, 20px);
+  }
+}
+
+.shadowFrame {
+  width: 130px;
+  margin-top: 15px;
+}
+
+.shadow {
+  -webkit-animation: shrink 3s ease-out infinite;
+          animation: shrink 3s ease-out infinite;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.shadow ellipse {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+@-webkit-keyframes shrink {
+  0% {
+    width: 90%;
+    margin: 0 5%;
+  }
+  50% {
+    width: 60%;
+    margin: 0 18%;
+  }
+  100% {
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: 90%;
+    margin: 0 5%;
+  }
+  50% {
+    width: 60%;
+    margin: 0 18%;
+  }
+  100% {
+    width: 90%;
+    margin: 0 5%;
+  }
+}
+
+.btn {
+  background-color: red;
+  border-radius: 15px;
+}
+/*# sourceMappingURL=home.module.css.map */

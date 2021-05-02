@@ -1,0 +1,68 @@
+.navbar {
+  background: #393e46;
+  width: 100vw;
+}
+
+.navText {
+  color: white;
+}
+
+.login {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.NavCsi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 47%;
+  margin-left: 2rem;
+}
+
+.navImage {
+  width: 3.5rem;
+  height: 3rem;
+  padding-right: 1rem;
+  -webkit-animation: swing ease-in-out 0.8s infinite alternate;
+          animation: swing ease-in-out 0.8s infinite alternate;
+}
+
+@-webkit-keyframes swing {
+  0% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  100% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
+
+@keyframes swing {
+  0% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  100% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+}
+
+.btnMain {
+  border: none;
+  outline: none;
+  margin-right: 1rem;
+  color: white;
+  background-color: #393e46;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+}
+/*# sourceMappingURL=navbar.module.css.map */

@@ -47,12 +47,12 @@ export default function Nav(props) {
                     </Typography>
 
                     <Link to="/">
-                        <button>home</button>
+                        <button className={styles.btnMain}>home</button>
                     </Link>
                     <Link to="/memes">
-                        <button>memes</button>
+                        <button className={styles.btnMain}>memes</button>
                     </Link>
-                    <button onClick={logoutUser}>Logout</button>
+                    <button onClick={logoutUser} className={styles.btnMain}>Logout</button>
                     <Button color="inherit">
                         <span>
                             <Dialogs />
