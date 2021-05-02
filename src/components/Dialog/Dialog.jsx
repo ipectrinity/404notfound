@@ -4,6 +4,8 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import "./dialog.scss";
 import axios from 'axios';
+import { navigate } from "@reach/router"
+
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 
 function SimpleDialog(props) {
@@ -15,6 +17,7 @@ function SimpleDialog(props) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [isError, setisError] = useState(false)
+    const [isSuccess, setisSuccess] = useState(false)
 
     let callApiOnClick = () => {
         console.log(username);
@@ -24,11 +27,16 @@ function SimpleDialog(props) {
                 // WHAT TO DO IF LOGGED IN
                 // WE WANT TO SAVE THE AUTH TOKEN IN LOCAL    
                 setisError(false)
+                setisSuccess(true)
                 localStorage.setItem('authToken', response.data.data.token)
+                navigate("/memes")
+
+
             }
             else {
                 console.log(response.data)
                 setisError(true)
+                setisSuccess(false)
             }
         })
     }
@@ -98,6 +106,7 @@ function SimpleDialog(props) {
                     </div>
                     <div className="login">
                         {isError ? <p className="loginErrorMessage">Invalid Credentials</p> : <p></p>}
+                        {isSuccess ? <p className="loginSuccessMessage">Login successful Go to memes page</p> : <p></p>}
                         <label>
                             <div className="fa fa-phone" />
                             <input className="username" type="text" autoComplete="on" placeholder="chemes id"

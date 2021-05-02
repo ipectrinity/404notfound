@@ -42,7 +42,7 @@ export default function Memes(prop) {
                     <div className={styles.description}>Popular Meme Platform "Elon Musk Cheems" Got Award for Making 100 Million People Laugh</div>
                 </div>
             </div>
-            <h1 className={styles.topMeme}>Top memes of the day</h1>
+            <h1 className={styles.topMeme}>Top memes of the day for you</h1>
         </div>
 
         {data ? data.map((meme, index) => {

@@ -4,6 +4,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 
 import Dialogs from "../Dialog/Dialog.jsx";
 
@@ -42,11 +43,19 @@ export default function Nav(props) {
                             <h5 className={styles.navText}>Elon Musk Cheems <span>{props.login}</span></h5>
                         </div>
 
-                        <button onClick={logoutUser}>Logout</button>
+
                     </Typography>
+
+                    <Link to="/">
+                        <button>home</button>
+                    </Link>
+                    <Link to="/memes">
+                        <button>memes</button>
+                    </Link>
+                    <button onClick={logoutUser}>Logout</button>
                     <Button color="inherit">
                         <span>
-                            <Dialogs log={props.log} />
+                            <Dialogs />
                         </span>
                     </Button>
                 </Toolbar>
