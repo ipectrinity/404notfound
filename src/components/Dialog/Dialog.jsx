@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import "./dialog.scss";
+import axios from 'axios';
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 
 function SimpleDialog(props) {
@@ -10,6 +11,23 @@ function SimpleDialog(props) {
     const handleClose = () => {
         onClose(selectedValue);
     };
+
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
+    let callApiOnClick = () => {
+        axios.post("https://elonmuskmemebackend.herokuapp.com/user/login", { loginparam: username, passwordparam: password }).then(response => {
+            if (response.data.done) {
+                // WHAT TO DO IF LOGGED IN
+                // WE WANT TO SAVE THE AUTH TOKEN IN LOCAL
+                console.log(response.data.data.token)
+                localStorage.setItem('authToken', response.data.data.token)
+            }
+            else {
+                console.log(response.data)
+            }
+        })
+    }
 
     return (
         <Dialog onClose={handleClose} open={open} >
@@ -77,14 +95,18 @@ function SimpleDialog(props) {
                     <div className="login">
                         <label>
                             <div className="fa fa-phone" />
-                            <input className="username" type="text" autoComplete="on" placeholder="chemes id" />
+                            <input className="username" type="text" autoComplete="on" placeholder="chemes id"
+                                onChange={(event) => { setUsername(event.target.value) }}
+                            />
                         </label>
                         <label>
                             <div className="fa fa-commenting" />
-                            <input className="password" type="password" autoComplete="off" placeholder="password" />
+                            <input className="password" type="password" autoComplete="off" placeholder="password"
+                                onChange={(event) => { setPassword(event.target.value) }}
+                            />
                             <button className="password-button">show</button>
                         </label>
-                        <button className="login-button">lets go!!</button>
+                        <button className="login-button" onClick={callApiOnClick}>lets go!!</button>
                     </div>
                     <div className="footer">Elon Musk chemes</div>
                 </div>

@@ -19,12 +19,13 @@ import styles from "./board.module.scss";
 const useStyles = makeStyles({
     root: {
         maxWidth: 700,
+        minWidth: 700,
         backgroundColor: "#1a1a1b",
     },
 });
 
 
-export default function Board() {
+export default function Board(props) {
     const classes = useStyles();
     return (
         <div className={styles.mainContainer}>
@@ -33,24 +34,24 @@ export default function Board() {
                     <div className={styles.flexMain}>
                         <div className={styles.flexOne}>
                             <ArrowUpwardIcon />
-                            <div className={styles.count}><p>69k</p></div>
+                            <div className={styles.count}><p>{props.vote}</p></div>
                             <ArrowDownwardIcon />
 
                         </div>
                         <div className={styles.flexTwo}>
                             <div className={styles.subFlexMain}>
                                 <div className={styles.subFlexOne}>
-                                    <span><img src="https://media.pitchfork.com/photos/592c54d513d197565213eeee/2:1/w_2560%2Cc_limit/99c7a81c.jpg" alt="person-1" className={styles.personImage} /></span>
-                                    <span className={styles.texForm}>xxxtentacion</span>
+                                    <span><img src={props.imageUrl} alt="person-1" className={styles.personImage} /></span>
+                                    <span className={styles.texForm}>{props.author}</span>
                                     <span className={styles.Date}>Date : 18 June 2018</span>
-                                    <div> <h4 className={styles.comments}>Shout out to Elon Bhaiya</h4></div>
+                                    <div> <h4 className={styles.comments}>{props.caption}</h4></div>
                                 </div>
 
                                 <div className={styles.subFlexTwo}>
                                     <button className={styles.follow}><AddIcon />follow</button>
                                 </div>
                             </div>
-                            <img src="https://www.digitalmarketer.com/wp-content/uploads/2020/07/you-said-memes-would-work.png" alt="meme-1" className={styles.image} />
+                            <img src={props.imageUrl} alt="meme-1" className={styles.image} />
                             <div className={styles.bottom}>
                                 <span>
                                     <ChatBubbleIcon />

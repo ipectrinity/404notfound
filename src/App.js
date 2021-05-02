@@ -6,14 +6,26 @@ import Preloader from "./components/Preloder/Preloader.jsx";
 import Nav from "./components/Navbar/Navbar.jsx";
 import Board from "./components/board/Board.jsx";
 
+const axios = require("axios").default;
+
 function App() {
   const [loading, setLoading] = useState(false);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 4000);
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get("https://meme-api.herokuapp.com/gimme/10")
+      .then(function (response) {
+        console.log(response.data.memes);
+        setData(response.data.memes);
+      });
   }, []);
 
   return (
@@ -26,7 +38,17 @@ function App() {
             <Nav />
           </div>
           <div className="pusher">
-            <Board />
+            {data.map((meme, index) => {
+              return (
+                <Board
+                  key={index}
+                  author={meme.author}
+                  imageUrl={meme.url}
+                  vote={meme.ups}
+                  caption={meme.title}
+                />
+              );
+            })}
           </div>
         </div>
       )}
