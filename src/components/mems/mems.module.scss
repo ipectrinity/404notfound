@@ -1,0 +1,64 @@
+.mainHead {
+  margin: 2rem;
+}
+
+.wrapperFlex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -5px;
+}
+
+.container {
+  overflow: hidden;
+  box-shadow: 0px 2px 8px 0px var(--clr-gray-light);
+  background-color: white;
+  text-align: center;
+  border-radius: 1rem;
+  position: relative;
+  width: 400px;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.bannerImg {
+  height: 19rem;
+  width: 110%;
+}
+
+.description {
+  position: absolute;
+  bottom: 20%;
+  font-family: Noto Sans, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: white;
+  font-size: 1rem;
+}
+
+.tesla {
+  background: linear-gradient(to bottom, transparent 0%, black 100%),
+    url(https://www.incimages.com/uploaded_files/image/1920x1080/getty_1130598318_411195.jpg);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cheems {
+  background: linear-gradient(to bottom, transparent 0%, black 100%),
+    url(https://source.unsplash.com/RSiqCjdmKPM/640x426);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.dogecoin {
+  background: linear-gradient(to bottom, transparent 0%, black 100%),
+    url(https://source.unsplash.com/oZogEz5VXeQ/640x426);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

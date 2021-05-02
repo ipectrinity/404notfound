@@ -20,7 +20,8 @@ const useStyles = makeStyles({
     root: {
         maxWidth: 700,
         minWidth: 700,
-
+        paddingTop: "1rem",
+        paddingBottom: "1rem",
         backgroundColor: "#1a1a1b",
     },
 });
@@ -49,7 +50,9 @@ export default function Board(props) {
                                 </div>
 
                                 <div className={styles.subFlexTwo}>
-                                    <button className={styles.follow}><AddIcon />follow</button>
+                                    <a href="https://www.instagram.com/ipectrinity/">
+                                        <button className={styles.follow}><AddIcon />follow</button>
+                                    </a>
                                 </div>
                             </div>
                             <img src={props.imageUrl} alt="meme-1" className={styles.image} />
