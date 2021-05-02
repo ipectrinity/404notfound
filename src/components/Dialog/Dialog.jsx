@@ -16,6 +16,7 @@ function SimpleDialog(props) {
     const [password, setPassword] = useState('')
 
     let callApiOnClick = () => {
+
         axios.post("https://elonmuskmemebackend.herokuapp.com/user/login", { loginparam: username, passwordparam: password }).then(response => {
             if (response.data.done) {
                 // WHAT TO DO IF LOGGED IN
@@ -63,7 +64,7 @@ function SimpleDialog(props) {
                         </div>
                     </div>
                     <div className="hands">
-                        <div className="hand hand--left hide">
+                        <div className="hand hand--left peek">
                             <div className="finger">
                                 <div className="bone" />
                                 <div className="nail" />
@@ -77,7 +78,7 @@ function SimpleDialog(props) {
                                 <div className="nail" />
                             </div>
                         </div>
-                        <div className="hand hand--right hide">
+                        <div className="hand hand--right peek">
                             <div className="finger">
                                 <div className="bone" />
                                 <div className="nail" />

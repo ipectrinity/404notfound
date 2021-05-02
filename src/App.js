@@ -4,15 +4,18 @@ import "./styles/app.scss";
 import Preloader from "./components/Preloder/Preloader.jsx";
 import Nav from "./components/Navbar/Navbar.jsx";
 import Memes from "./components/mems/Mems.jsx";
+// import Home from "./components/Home/Home.jsx";
 
 const axios = require("axios").default;
 
 function App() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
+  const [login, setLogin] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
+    // setLoading(true);
+    setLogin(true);
     setTimeout(() => {
       setLoading(false);
     }, 4000);
@@ -34,7 +37,7 @@ function App() {
       ) : (
         <div>
           <div className="navigation">
-            <Nav />
+            <Nav login={login} setLoading={setLogin} />
           </div>
           <div className="pusher">
             <Memes data={data} />

@@ -5,9 +5,11 @@ import Board from "../board/Board.jsx";
 
 
 
+
 export default function Memes(prop) {
     return (<div>
         <div className={styles.mainHead}>
+            <h1 className={styles.topMeme}>Top meme news</h1>
             <div className={styles.wrapperFlex}>
                 <div className={styles.container}>
                     <div className={`${styles.bannerImg} ${styles.tesla}`} />
@@ -22,6 +24,7 @@ export default function Memes(prop) {
                     <div className={styles.description}>Popular Meme Platform "Elon Musk Cheems" Got Award for Making 100 Million People Laugh</div>
                 </div>
             </div>
+            <h1 className={styles.topMeme}>Top memes of the day</h1>
         </div>
 
         {prop.data.map((meme, index) => {

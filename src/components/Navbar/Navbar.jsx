@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Nav() {
+export default function Nav(props) {
 
     const classes = useStyles();
     // const [sidebar, setSidebar] = useState(false);
@@ -34,12 +34,12 @@ export default function Nav() {
                     <Typography variant="h6" className={classes.title}>
                         <div className={styles.NavCsi}>
                             <img src={image} className={styles.navImage} alt="elon bhaiya" />
-                            <h5 className={styles.navText}>Elon Musk Cheems</h5>
+                            <h5 className={styles.navText}>Elon Musk Cheems <span>{props.login}</span></h5>
                         </div>
                     </Typography>
                     <Button color="inherit">
                         <span>
-                            <Dialogs />
+                            <Dialogs log={props.log} />
                         </span>
                     </Button>
                 </Toolbar>
