@@ -9,6 +9,8 @@ import Dialogs from "../Dialog/Dialog.jsx";
 
 import styles from "./navbar.module.scss";
 
+import image from '../../Assets/Elon.png'
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -31,7 +33,8 @@ export default function Nav() {
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
                         <div className={styles.NavCsi}>
-                            <h5 className={styles.navText}>Elon Musk Chemes</h5>
+                        <img src={image}className={styles.navImage}/>
+                            <h5 className={styles.navText}>Elon Musk Cheems</h5>
                         </div>
                     </Typography>
                     <Button color="inherit">

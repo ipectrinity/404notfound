@@ -19,3 +19,19 @@
   width: 47%;
   margin-left: 2rem;
 }
+
+.navImage {
+  width: 3.5rem;
+  height: 3rem;
+  padding-right: 1rem;
+  animation: swing ease-in-out 0.8s infinite alternate;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}
