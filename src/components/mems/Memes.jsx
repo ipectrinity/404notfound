@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from "axios"
 import styles from "./mems.module.scss";
 
 import Board from "../board/Board.jsx";
@@ -7,6 +8,23 @@ import Board from "../board/Board.jsx";
 
 
 export default function Memes(prop) {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        if (localStorage.getItem('authToken')) {
+            axios
+                .get("https://meme-api.herokuapp.com/gimme/wholesomememes/50")
+                .then(function (response) {
+                    console.log(response.data.memes);
+                    setData(response.data.memes);
+                });
+        }
+        else {
+            setData([])
+        }
+
+    }, []);
+
     return (<div>
         <div className={styles.mainHead}>
             <h1 className={styles.topMeme}>Top meme news</h1>
@@ -27,7 +45,7 @@ export default function Memes(prop) {
             <h1 className={styles.topMeme}>Top memes of the day</h1>
         </div>
 
-        {prop.data.map((meme, index) => {
+        {data ? data.map((meme, index) => {
             return (
                 <Board
                     key={index}
@@ -37,6 +55,6 @@ export default function Memes(prop) {
                     caption={meme.title}
                 />
             );
-        })}
+        }) : <div>SOMETHING</div>}
     </div>);
 }

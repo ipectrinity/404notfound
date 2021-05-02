@@ -25,6 +25,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Nav(props) {
 
+    let logoutUser = () => {
+        localStorage.removeItem('authToken')
+        alert("Logged Out")
+    }
+
     const classes = useStyles();
     // const [sidebar, setSidebar] = useState(false);
     return (<div>
@@ -36,6 +41,8 @@ export default function Nav(props) {
                             <img src={image} className={styles.navImage} alt="elon bhaiya" />
                             <h5 className={styles.navText}>Elon Musk Cheems <span>{props.login}</span></h5>
                         </div>
+
+                        <button onClick={logoutUser}>Logout</button>
                     </Typography>
                     <Button color="inherit">
                         <span>

@@ -18,6 +18,12 @@ body {
   overflow: hidden;
   background-image: linear-gradient(to top right, #f9a743, #f9db5f);
 }
+.loginErrorMessage {
+  background-color: red;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 10px 20px 10px 20px;
+}
 @media screen and (max-height: 500px) {
   .center {
     transition: transform 0.5s;

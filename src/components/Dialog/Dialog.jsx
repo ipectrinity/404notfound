@@ -14,18 +14,21 @@ function SimpleDialog(props) {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [isError, setisError] = useState(false)
 
     let callApiOnClick = () => {
-
+        console.log(username);
+        console.log(password);
         axios.post("https://elonmuskmemebackend.herokuapp.com/user/login", { loginparam: username, passwordparam: password }).then(response => {
             if (response.data.done) {
                 // WHAT TO DO IF LOGGED IN
-                // WE WANT TO SAVE THE AUTH TOKEN IN LOCAL
-                console.log(response.data.data.token)
+                // WE WANT TO SAVE THE AUTH TOKEN IN LOCAL    
+                setisError(false)
                 localStorage.setItem('authToken', response.data.data.token)
             }
             else {
                 console.log(response.data)
+                setisError(true)
             }
         })
     }
@@ -94,6 +97,7 @@ function SimpleDialog(props) {
                         </div>
                     </div>
                     <div className="login">
+                        {isError ? <p className="loginErrorMessage">Invalid Credentials</p> : <p></p>}
                         <label>
                             <div className="fa fa-phone" />
                             <input className="username" type="text" autoComplete="on" placeholder="chemes id"
