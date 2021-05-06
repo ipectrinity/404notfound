@@ -13,7 +13,7 @@ export default function Memes(prop) {
     useEffect(() => {
         if (localStorage.getItem('authToken')) {
             axios
-                .get("https://meme-api.herokuapp.com/gimme/wholesomememes/50")
+                .get("https://meme-api.herokuapp.com/gimme/50")
                 .then(function (response) {
                     console.log(response.data.memes);
                     setData(response.data.memes);
