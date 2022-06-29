@@ -11,7 +11,7 @@ export default function Memes(prop) {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        if (localStorage.getItem('authToken')) {
+        if (!localStorage.getItem('authToken')) {
             axios
                 .get("https://meme-api.herokuapp.com/gimme/50")
                 .then(function (response) {
